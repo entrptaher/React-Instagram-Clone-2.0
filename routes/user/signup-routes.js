@@ -91,9 +91,16 @@ app.post('/user/signup', async (req, res) => {
           surname,
           email,
           password,
+          bio: '',
+          instagram: '',
+          facebook: '',
+          twitter: '',
+          github: '',
+          phone: '',
+          website: '',
           joined: new Date().getTime(),
           email_verified: 'no',
-          isOnline: 'yes',
+          lastOnline: new Date().getTime(),
         }
         let { insertId, affectedRows } = await User.create_user(newUser)
 
