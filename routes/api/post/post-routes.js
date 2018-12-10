@@ -27,7 +27,7 @@ app.post('/post-it', upload.single('image'), async (req, res) => {
         filter,
         location,
         type,
-        group_id: group,
+        group_id: isNaN(parseInt(group)) ? 0 : group,
         post_time: new Date().getTime(),
       }
 
